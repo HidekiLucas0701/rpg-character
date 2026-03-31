@@ -2,6 +2,9 @@ package fiap.com.br.rpgcharacter.entity;
 
 import fiap.com.br.rpgcharacter.enums.CharacterClass;
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 import lombok.Data;
 
 import java.time.LocalDate;
@@ -10,6 +13,9 @@ import java.time.LocalDate;
 @Data
 public class Character {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
     private String name;
     private String email;
     private Integer age;
