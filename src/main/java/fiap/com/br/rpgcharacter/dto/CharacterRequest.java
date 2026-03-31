@@ -10,32 +10,31 @@ import java.time.LocalDate;
 public record CharacterRequest (
 
         @NotBlank(message = "Name is required")
-        @Min(3)
-        @Max(50)
+        @Size(min = 3, max = 50)
         String name,
 
         @NotBlank(message = "Email is required")
         @Email
         String email,
 
-        @NotBlank(message = "Age is required")
+        @NotNull(message = "Age is required")
         @Min(12)
         @Max(120)
         Integer age,
 
-        @NotBlank(message = "Class is required")
+        @NotNull(message = "Class is required")
         CharacterClass characterClass,
 
-        @NotBlank(message = "Level is required")
+        @NotNull(message = "Level is required")
         @Min(1)
         @Max(100)
         Integer level,
 
-        @NotBlank(message = "Hp is required")
+        @NotNull(message = "Hp is required")
         @Min(0)
         Double hp,
 
-        @NotBlank(message = "Creation date is required")
+        @NotNull(message = "Creation date is required")
         @Past
         LocalDate createdAt,
 
